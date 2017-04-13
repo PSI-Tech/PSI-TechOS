@@ -1,0 +1,5 @@
+So first of all I need to setup the GDT, which includes segmentation. From what
+I understand I need to make a GDT which includes some stuff like where the
+different segments reside. So I think what should be done is we should have the
+kernel segments (data, code) defined in the GDT, the various TSS's and then the
+LDT's. The GDT will be stored as a global variable. 
