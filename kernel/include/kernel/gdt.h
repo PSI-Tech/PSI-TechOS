@@ -20,7 +20,7 @@ struct gdt_entry
 
 /* Define a GDT pointer. This is what is uploaded to the GDTR */
 
-struct gdt_ptr 
+struct gdt_ptr
 {
 	uint16_t limit;
 	uint32_t base;
@@ -32,7 +32,7 @@ struct gdt_ptr gdtp;
 extern void gdt_flush();
 
 void gdt_set_gate(int num, unsigned long base, unsigned long limit,
-	       	unsigned char access, unsigned char gran);
+		unsigned char access, unsigned char gran);
 void gdt_init();
 
 #endif

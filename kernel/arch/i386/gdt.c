@@ -4,7 +4,7 @@
 #include <stdio.h>
 
 void gdt_set_gate(int num, unsigned long base, unsigned long limit,
- unsigned char access, unsigned char gran) 
+		unsigned char access, unsigned char gran)
 {
 	/* Setup descriptor base address */
 	gdt[num].base_low = (base & 0xFFFF);
@@ -38,4 +38,4 @@ void gdt_init()
 
 	memcpy((char*) gdtp.base, (char*) gdt, gdtp.limit);
 	gdt_flush();
-}	
+}
