@@ -4,17 +4,18 @@
 #include <stdint.h>
 
 #define GDT_SIZE 10
+#define GDT_BASE 0x00000800
 
 /* Define a GDT entry. An entry is something like an LDT or TSS */
 
 struct gdt_entry
 {
-	uint16_t limit_low;
-	uint16_t base_low;
-	uint8_t base_middle;
-	uint8_t access;
-	uint8_t limit_high_flags;
-	uint8_t base_high;
+	unsigned short limit_low;
+	unsigned short base_low;
+	unsigned char base_middle;
+	unsigned char access;
+	unsigned char granularity;
+	unsigned char base_high;
 } __attribute((packed));
 
 /* Define a GDT pointer. This is what is uploaded to the GDTR */
@@ -30,8 +31,8 @@ struct gdt_ptr gdtp;
 
 extern void gdt_flush();
 
-void gdt_set_gate(int num, uint32_t base, uint32_t limit, uint8_t access,
-		uint8_t flags);
+void gdt_set_gate(int num, unsigned long base, unsigned long limit,
+	       	unsigned char access, unsigned char gran);
 void gdt_init();
 
 #endif

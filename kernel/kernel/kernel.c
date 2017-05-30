@@ -5,7 +5,7 @@
 void kernel_main(void) {
 	terminal_initialize();
 	printf("Ready to go!\n");
-	/* gdt_init(); */
+	gdt_init(); 
 
 	printf("Wassup \n");
 }

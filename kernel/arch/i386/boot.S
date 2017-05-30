@@ -41,12 +41,12 @@ _start:
 .global gdt_flush
 .type gdt_flush, @function
 gdt_flush:
-	cli
 	lgdt (gdtp)
-	mov $0x10, %ax
-	mov %ax, %ds
-	mov %ax, %es
-	mov %ax, %fs
-	mov %ax, %gs
-	mov %ax, %ss
+	movw $0x10, %ax
+	movw %ax, %ds
+	movw %ax, %es
+	movw %ax, %fs
+	movw %ax, %gs
+	ljmp $0x08, $next
+next:
 	ret
