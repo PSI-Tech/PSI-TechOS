@@ -1,0 +1,15 @@
+*
+*/
+!.gitignore
+!*.S
+!*.c
+!*.h
+!Makefile
+!*.ld
+!*.config
+!bochsrc.txt
+!*.sh
+!*.md
+!LICENSE
+scripts/sysroot
+scripts/isodir
