@@ -1,5 +1,4 @@
 *
-*/
 !.gitignore
 !*.S
 !*.c
@@ -11,5 +10,6 @@
 !*.sh
 !*.md
 !LICENSE
+!*/
 scripts/sysroot
 scripts/isodir
